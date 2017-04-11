@@ -11,3 +11,8 @@ for n in range(1,11):
 
 for n in range(1,11):  
     print(n*5)
+
+x=0
+while True:
+    x = x + 1
+    print(x+1)
