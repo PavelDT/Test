@@ -22,7 +22,7 @@ def mark_grade(testresult):
     return feedback_message
 
 #function chaining - func within parenthesis
-while(score > 0 and score < 100)
+while(score > 0 or score < 100):
 	score = int(input("Candidate's score? "))
 	print(mark_grade(score))
 
