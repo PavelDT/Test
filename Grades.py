@@ -1,4 +1,4 @@
-score = int(input("Candidate's score? "))
+score = 0
 
 def mark_grade(testresult):
     feedback_message = "error in processesing grade"
@@ -22,7 +22,9 @@ def mark_grade(testresult):
     return feedback_message
 
 #function chaining - func within parenthesis
-print(mark_grade(score))
+while(score > 0 and score < 100)
+	score = int(input("Candidate's score? "))
+	print(mark_grade(score))
 
 # variable
 # function_with_no_params()
