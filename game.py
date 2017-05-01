@@ -1,5 +1,21 @@
 #create a game menu with 4 starting options
 import sys
+from random import randint
+
+def innitialise_grid():
+    board_array = []
+    counter = 0
+    while counter < 3:
+        # blank_list[0]
+        board_array.append([])
+        new_counter = 0
+        while new_counter < 3:
+            print("counter: " + str(counter))
+            board_array[counter].append(randint(0, 1))  # this is how rng function is made in this case between 0-1
+            new_counter = new_counter + 1
+        counter = counter + 1
+    print(board_array)
+    return board_array
 
 def quit_fn():
     print ("Exiting")
@@ -9,9 +25,7 @@ def save_fn():
     print("saved")
 def new_fn():
     print("what would you like to play")
-    board_array = ([[1, 2, 3],
-                    [4, 5, 6],
-                    [7, 8, 9]])
+    board_array = innitialise_grid()
 
     for itemlist in board_array:
         print(itemlist[0], itemlist[1], itemlist[2])
