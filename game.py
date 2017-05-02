@@ -16,7 +16,16 @@ def innitialise_grid():
         counter = counter + 1
     print(board_array)
     return board_array
-
+def check_ship(x, y, board):
+    x = int(input("x coordiante "))
+    y = int(input("y coordinate "))
+    if x > 2 or y > 2 or x < 0 or y < 0:
+        print("invalid input")
+    else:
+        if board[x][y] == 1:
+            print("ship found")
+        else:
+            print("no ship found")
 def quit_fn():
     print ("Exiting")
     # exiting through while condition makes this statement redundant
@@ -24,11 +33,20 @@ def quit_fn():
 def save_fn():
     print("saved")
 def new_fn():
-    print("what would you like to play")
+    print("Starting new game")
+    gameover = False
     board_array = innitialise_grid()
 
     for itemlist in board_array:
         print(itemlist[0], itemlist[1], itemlist[2])
+
+    while gameover == False:
+        check_ship(1, 2, board_array)
+        if 1 in board_array:
+            print("move again")
+        else:
+            gameover = True
+
 def load_fn():
     print ("loading...")
 #wrap map in a function so it can be used multiple times by the meny
@@ -55,7 +73,6 @@ for menu_option in listmenu:
 # print(menu["4"])
 user_input = 0
 while user_input != 4:
-    print("what would you like to do")
     user_input = int(input("what would you like to do next"))
     if user_input == 1:
         new_fn()
