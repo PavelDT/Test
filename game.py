@@ -10,13 +10,11 @@ def innitialise_grid():
         board_array.append([])
         new_counter = 0
         while new_counter < 3:
-            print("counter: " + str(counter))
             board_array[counter].append(randint(0, 1))  # this is how rng function is made in this case between 0-1
             new_counter = new_counter + 1
         counter = counter + 1
-    print(board_array)
     return board_array
-def check_ship(x, y, board):
+def check_ship(board):
     x = int(input("x coordiante "))
     y = int(input("y coordinate "))
     if x > 2 or y > 2 or x < 0 or y < 0:
@@ -41,11 +39,14 @@ def new_fn():
         print(itemlist[0], itemlist[1], itemlist[2])
 
     while gameover == False:
-        check_ship(1, 2, board_array)
-        if 1 in board_array:
+        check_ship(board_array)
+        if 1 in board_array[0] or 1 in board_array[1] or 1 in board_array[2]:
+            gameover = False
             print("move again")
         else:
+            print("you win!")
             gameover = True
+
 
 def load_fn():
     print ("loading...")
