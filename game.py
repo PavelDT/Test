@@ -40,12 +40,18 @@ def new_fn():
 
     while gameover == False:
         check_ship(board_array)
-        if 1 in board_array[0] or 1 in board_array[1] or 1 in board_array[2]:
-            gameover = False
-            print("move again")
-        else:
+        game_over_after_this_turn = True # we assume game is over, and then check if it is
+        #if 1 in board_array[0] or 1 in board_array[1] or 1 in board_array[2]:
+        for list in board_array:
+            if 1 in list:
+                game_over_after_this_turn = False
+
+
+        if game_over_after_this_turn == True:
             print("you win!")
             gameover = True
+        else:
+            print("move again")
 
 
 def load_fn():
