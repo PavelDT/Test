@@ -63,13 +63,8 @@ def load_fn():
     print("loading...")
 #wrap map in a function so it can be used multiple times by the meny
 
-# menu = {}
-# menu["1"] = "New game"
-# menu["2"] = "Save game"
-# menu["3"] = "Load game"
-# menu["4"] = "Quit"
-# for menu_option in menu:
-#     print(menu_option+ " " + menu[menu_option])
+# Begin to conver the board into a hidden field where 1/0 are displayed as "?" and revealed as Xif ship was present and
+# struck or 0 if no ship was present once that spot is selected
 
 listmenu = []
 listmenu.append("1 New game")
